@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{91FF16DA-551E-4C01-BDC8-9134020883EC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YiFen.DataHelper</RootNamespace>
+    <AssemblyName>YiFen.DataHelper</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ApplicationBlocks.Data">
+      <HintPath>..\References\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attribute\EnableAttribute.cs" />
+    <Compile Include="Attribute\InsertableAttribute.cs" />
+    <Compile Include="Attribute\NameInDatabaseAttribute.cs" />
+    <Compile Include="Attribute\SelectableAttribute.cs" />
+    <Compile Include="Attribute\UpdatableAttribute.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="JoinEnum.cs" />
+    <Compile Include="JoinInfo.cs" />
+    <Compile Include="QueryTransaction.cs" />
+    <Compile Include="SaveEnum.cs" />
+    <Compile Include="SelectBuilder~T.cs" />
+    <Compile Include="Service.cs" />
+    <Compile Include="DataUtility.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="EntityBuilder.cs" />
+    <Compile Include="IDbQuery.cs" />
+    <Compile Include="IQuery.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryAdapter\SQL2005\SQL2005DbQuery.cs" />
+    <Compile Include="QueryAdapter\SQL2005\SQL2005Query.cs" />
+    <Compile Include="Query.cs" />
+    <Compile Include="SQLInfo.cs" />
+    <Compile Include="UpdateBuilder~T.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YiFen.Core\YiFen.Core.csproj">
+      <Project>{F46CB39A-F1BC-40F0-B99C-3833D460FEF6}</Project>
+      <Name>YiFen.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
